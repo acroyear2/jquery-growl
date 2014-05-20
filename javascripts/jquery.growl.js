@@ -5,13 +5,19 @@ Copyright 2013 Kevin Sylvestre
 1.1.8
 */
 
-
-(function() {
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
+    factory(require('jquery'));
+  } else {
+    factory(jQuery);
+  }
+}(function ($) {
   "use strict";
-  var $, Animation, Growl,
+  
+  Animation, Growl,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
-
-  $ = jQuery;
 
   Animation = (function() {
     function Animation() {}
@@ -218,4 +224,4 @@ Copyright 2013 Kevin Sylvestre
     return $.growl($.extend(settings, options));
   };
 
-}).call(this);
+}));
