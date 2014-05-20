@@ -15,8 +15,8 @@ Copyright 2013 Kevin Sylvestre
   }
 }(function ($) {
   "use strict";
-  
-  Animation, Growl,
+
+  var Animation, Growl,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   Animation = (function() {
